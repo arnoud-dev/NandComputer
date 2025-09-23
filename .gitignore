@@ -1,0 +1,5 @@
+# Ignore Eclipse settings and build
+.settings/
+bin/
+*.class
+*.log
