@@ -27,7 +27,7 @@ public class CompareComps {
 		return lg.notGate(equal(byteOne, byteTwo));
 	}
 	
-	public boolean greaterThen(boolean[] byteOne, boolean[] byteTwo) {
+	public boolean greaterThan(boolean[] byteOne, boolean[] byteTwo) {
 	    boolean gt7 = lg.andGate(lg.notGate(byteTwo[0]), byteOne[0]);
 	    boolean eq7 = lg.notGate(lg.xorGate(byteOne[0], byteTwo[0]));
 
@@ -56,15 +56,15 @@ public class CompareComps {
 	             lg.orGate(lg.orGate(gt3, gt2), lg.orGate(gt1, gt0)));
 	}
 	
-	public boolean greaterOrEqualThen(boolean[] byteOne, boolean[] byteTwo) {
-		return lg.orGate(equal(byteOne, byteTwo), greaterThen(byteOne, byteTwo));
+	public boolean greaterOrEqualThan(boolean[] byteOne, boolean[] byteTwo) {
+		return lg.orGate(equal(byteOne, byteTwo), greaterThan(byteOne, byteTwo));
 	}
 	
-	public boolean lesserThen(boolean[] byteOne, boolean[] byteTwo) {
-		return lg.andGate(lesserOrEqualThen(byteOne, byteTwo), notEqual(byteOne, byteTwo));
+	public boolean lesserThan(boolean[] byteOne, boolean[] byteTwo) {
+		return lg.andGate(lesserOrEqualThan(byteOne, byteTwo), notEqual(byteOne, byteTwo));
 	}
 	
-	public boolean lesserOrEqualThen(boolean[] byteOne, boolean[] byteTwo) {
-		return lg.notGate(greaterThen(byteOne, byteTwo));
+	public boolean lesserOrEqualThan(boolean[] byteOne, boolean[] byteTwo) {
+		return lg.notGate(greaterThan(byteOne, byteTwo));
 	}
 }
